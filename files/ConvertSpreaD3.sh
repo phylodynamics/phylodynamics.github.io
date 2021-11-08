@@ -4,7 +4,7 @@ set -Eeuo pipefail
 
 (
     head -n 149 < main.js
-    echo -n 'json = '
+    echo 'json = ' | tr -d '\n'
     cat data.json
     echo ';'
     tail -n +156 main.js | awk 'NR != 107'
